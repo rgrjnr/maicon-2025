@@ -48,13 +48,13 @@
           <h2 class="text-3xl" v-gsap.whenVisible.entrance.slide-right="1">
             Sobre mim
           </h2>
-          <p>
+          <p class="animate-lines">
             Nasci em 1996 e cresci numa fazenda no interior do Mato Grosso do
             Sul, onde o quintal era visitado por antas, javalis e até onça. A
             diversão era andar de carroça com meu avô ou mergulhar em rios e
             lagoas sempre que podia.
           </p>
-          <p>
+          <p class="animate-lines">
             Foi assistindo à MTV, ainda na roça, que me apaixonei pela estética
             das coisas. Achei que seria estilista, e com 22 anos me mudei para
             São Paulo com esse sonho. Mas os preços dos cursos e dos aluguéis me
@@ -63,19 +63,19 @@
             Foi criando posts para essa boutique que descobri o design gráfico —
             e percebi que ali era o meu lugar.
           </p>
-          <p>
+          <p class="animate-lines">
             Formado pela UNIP, mergulhei no universo visual e encontrei no
             motion design uma nova paixão. Já trabalhei com marcas e projetos
             bem variados — de produtos para bebê até amortecedores com um
             cachorro salsicha como garoto-propaganda.
           </p>
-          <p>
+          <p class="animate-lines">
             Sou um pouco metódico, muitas vezes não entendo sarcasmo e deixo
             sempre o volume da TV em números redondos. Sou facilmente atraido
             por filmes de drama, distopias ou terror psicológico, mas também
             adoro comédias românticas como De Repente 30 e O Diabo Veste Prada.
           </p>
-          <p>
+          <p class="animate-lines">
             Hoje moro em Lisboa, sou pai da Dinoco e da Mel, e quero voltar ao
             mercado como diretor de arte, pronto para novos desafios. E, quem
             sabe um dia, criar o conceito visual de um álbum pop ou produzir
