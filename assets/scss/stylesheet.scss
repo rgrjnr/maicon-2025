@@ -24,6 +24,13 @@ body {
   background-color: var(--background-color);
   color: var(--color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  --outer-padding: 6rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    --outer-padding: 2rem;
+  }
 }
 
 .font-main {
@@ -31,7 +38,7 @@ body {
 }
 
 #site {
-  padding: 6rem;
+  padding: var(--outer-padding);
   padding-top: 6rem;
   background-color: var(--background-color);
   transition: background-color 0.3s ease;
@@ -72,12 +79,18 @@ h3 {
 .case-title {
   font-size: 3rem;
   font-family: "Oli Grotesk L";
+  line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .case-tags {
   @extend .uppercase;
   font-size: 0.8rem;
   opacity: 0.5;
+  text-align: right;
 }
 
 #hero {
@@ -159,10 +172,16 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  padding: 3rem 6rem;
+  padding: 3rem;
+  padding-inline: calc(1 * var(--outer-padding));
   color: white;
   z-index: 100;
   mix-blend-mode: difference;
+}
+
+body:has(article) header {
+  mix-blend-mode: normal;
+  color: var(--text-color);
 }
 
 ::selection {
@@ -171,4 +190,8 @@ header {
 
 ::-moz-selection {
   background-color: #808080;
+}
+
+#about {
+  padding: var(--outer-padding);
 }

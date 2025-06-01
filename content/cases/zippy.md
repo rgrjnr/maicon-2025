@@ -1,10 +1,37 @@
 ---
-title: Zippy
-tags: Direção de Arte
+title: WeGrow
+subtitle: Shortlist CCP 2025
+function: Direção de Arte
+agency: Brother School
+client: Zippy
 date: 2025-02-01
 background: "#ED292D"
 color: white
-description: "Zippy is a platform for creating and sharing short videos. It's a social media platform that allows users to create and share short videos with their friends and family."
 ---
 
-![Zippy](./cases/zippy-board.jpg)
+A Zippy lança o WeGrow, o primeiro cartão de fidelização exclusivo para crianças. Mais do que um programa de pontos, o WeGrow é uma experiência pensada para envolver os mais pequenos, incentivando o crescimento, a responsabilidade e deixando o momento da compra mais divertido.
+
+![Zippy](./cases/zippy/board.jpg)
+
+::gallery
+![Zippy](./cases/zippy/Z00001.jpg)
+![Zippy](./cases/zippy/Z00002.jpg)
+![Zippy](./cases/zippy/Z00003.jpg)
+![Zippy](./cases/zippy/Z00004.jpg)
+![Zippy](./cases/zippy/Z00005.jpg)
+![Zippy](./cases/zippy/Z00006.jpg)
+![Zippy](./cases/zippy/Z00007.jpg)
+![Zippy](./cases/zippy/Z00008.jpg)
+![Zippy](./cases/zippy/Z00009.jpg)
+![Zippy](./cases/zippy/Z00010.jpg)
+![Zippy](./cases/zippy/Z00011.jpg)
+![Zippy](./cases/zippy/Z00012.jpg)
+![Zippy](./cases/zippy/Z00013.jpg)
+![Zippy](./cases/zippy/Z00014.jpg)
+![Zippy](./cases/zippy/Z00015.jpg)
+![Zippy](./cases/zippy/Z00016.jpg)
+![Zippy](./cases/zippy/Z00017.jpg)
+![Zippy](./cases/zippy/Z00018.jpg)
+::
+
+![Zippy](./cases/zippy/mockup.jpg)

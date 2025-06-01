@@ -26,7 +26,7 @@
     </section>
 
     <!-- Cases List -->
-    <section class="relative z-10">
+    <section class="relative z-10" id="cases">
       <div class="cases-list">
         <NuxtLink :to="item.path" v-for="item in cases" :key="item.id">
           <div class="case-item">
@@ -34,7 +34,7 @@
               {{ item.title }}
             </div>
             <div class="case-tags">
-              <span v-for="tag in item.tags" :key="tag">{{ tag }}</span>
+              {{ item.function }}
             </div>
           </div>
         </NuxtLink>
@@ -42,36 +42,48 @@
     </section>
 
     <!-- About me -->
-    <section class="bg-black text-white p-24" id="about">
-      <div style="max-width: 40rem; margin-left: auto">
+    <section class="bg-black text-white p-24 z-10 relative" id="about">
+      <div style="max-width: 40rem; margin: auto">
         <div class="flex flex-col gap-4">
           <h2 class="text-3xl" v-gsap.whenVisible.entrance.slide-right="1">
             Sobre mim
           </h2>
-          <p></p>
-          <p class="animate-lines">
-            Hello! I'm Maicon, an art director, motion designer. I graduated in
-            Graphic Design from Unip (São Paulo) in 2022 and have been working
-            in the field since 2020, starting as a freelancer.
+          <p>
+            Nasci em 1996 e cresci numa fazenda no interior do Mato Grosso do
+            Sul, onde o quintal era visitado por antas, javalis e até onça. A
+            diversão era andar de carroça com meu avô ou mergulhar em rios e
+            lagoas sempre que podia.
           </p>
-          <p class="animate-lines">
-            My appreciation for design has been with me since early on, and my
-            work reflects this passion through pieces with creative and clear
-            communication. I'm obssesed with transforming ideas on paper into
-            pieces with a lot of personality and creativity.
+          <p>
+            Foi assistindo à MTV, ainda na roça, que me apaixonei pela estética
+            das coisas. Achei que seria estilista, e com 22 anos me mudei para
+            São Paulo com esse sonho. Mas os preços dos cursos e dos aluguéis me
+            levaram por outros caminhos. Trabalhei com moda, numa boutique
+            chique, e até preparava figurino para apresentadoras de telejornal.
+            Foi criando posts para essa boutique que descobri o design gráfico —
+            e percebi que ali era o meu lugar.
           </p>
-          <p class="animate-lines">
-            Do you have a small or large project in mind? Social media posts? Or
-            perhaps a logo animation? I create both short animations and
-            complete projects, such as artworks and institutional videos.
+          <p>
+            Formado pela UNIP, mergulhei no universo visual e encontrei no
+            motion design uma nova paixão. Já trabalhei com marcas e projetos
+            bem variados — de produtos para bebê até amortecedores com um
+            cachorro salsicha como garoto-propaganda.
           </p>
-          <p class="animate-lines">
-            I've worked with large companies such as Cartoon Network, Magnum,
-            TNT Sports, Lillo, Nuk, Cofap, McCain FoodService, among others.
+          <p>
+            Sou um pouco metódico, muitas vezes não entendo sarcasmo e deixo
+            sempre o volume da TV em números redondos. Sou facilmente atraido
+            por filmes de drama, distopias ou terror psicológico, mas também
+            adoro comédias românticas como De Repente 30 e O Diabo Veste Prada.
+          </p>
+          <p>
+            Hoje moro em Lisboa, sou pai da Dinoco e da Mel, e quero voltar ao
+            mercado como diretor de arte, pronto para novos desafios. E, quem
+            sabe um dia, criar o conceito visual de um álbum pop ou produzir
+            interludes de um show que deixem os fãs de queixo caído.
           </p>
         </div>
-        <div class="flex gap-4 flex-1 mt-8">
-          <div class="flex flex-col gap-4">
+        <div class="flex flex-col sm:flex-row gap-4 flex-1 mt-8">
+          <div class="flex flex-col gap-4 flex-1">
             <h2 class="text-3xl" v-gsap.whenVisible.entrance.slide-right="1">
               Educação
             </h2>
@@ -110,8 +122,10 @@
     </section>
   </main>
   <footer>
-    <div class="flex justify-around items-center p-8 py-40 border-2">
-      <p class="text-3xl font-main">Vamos trabalhar juntos?</p>
+    <div
+      class="flex flex-col sm:flex-row justify-around items-center p-8 py-40 border-2 gap-4"
+    >
+      <p class="text-3xl font-main text-center">Vamos trabalhar juntos?</p>
       <p class="uppercase">
         <a href="mailto:maicon@maicondouglas.com">maicon@maicondouglas.com</a>
       </p>
@@ -128,16 +142,25 @@ const { data: cases } = await useAsyncData("cases", () =>
 );
 
 onMounted(() => {
-  gsap.to("header", {
-    scrollTrigger: {
-      trigger: "#site",
-      start: "top top",
-      end: "6rem top",
-      scrub: 1,
+  document.body.style.setProperty("--color", "black");
+  document.body.style.setProperty("--background-color", "white");
+
+  gsap.fromTo(
+    "header",
+    {
+      paddingInline: "calc(1 * var(--outer-padding))",
     },
-    paddingInline: "9rem",
-    ease: "none",
-  });
+    {
+      scrollTrigger: {
+        trigger: "#site",
+        start: "top top",
+        end: "6rem top",
+        scrub: 1,
+      },
+      paddingInline: "calc(1.5 * var(--outer-padding))",
+      ease: "none",
+    }
+  );
 
   gsap.to("#hero", {
     scrollTrigger: {

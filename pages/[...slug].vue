@@ -1,8 +1,22 @@
 <script lang="ts" setup>
+import { gsap } from "gsap";
 const route = useRoute();
 const { data: page } = await useAsyncData(route.path, () => {
   console.log("query", queryCollection("cases").path(route.path));
   return queryCollection("cases").path(route.path).first();
+});
+
+const { data: allCases } = await useAsyncData("allCases", () =>
+  queryCollection("cases").all()
+);
+
+const nextCase = computed(() => {
+  if (!allCases.value || !page.value) return null;
+  const currentIndex = allCases.value.findIndex(
+    (c) => c.path === page.value?.path
+  );
+  const nextIndex = (currentIndex + 1) % allCases.value.length;
+  return allCases.value[nextIndex];
 });
 
 onMounted(() => {
@@ -18,29 +32,59 @@ onMounted(() => {
 </script>
 
 <template>
-  <template v-if="page"
-    ><div class="flex gap-4">
-      <h1 class="text-4xl font-regular">{{ page.title }}</h1>
-      <p class="text-lg">{{ page.description }}</p>
-    </div>
+  <template v-if="page">
     <article>
-      <ContentRenderer :value="page" />
+      <div class="flex gap-4 mt-12 items-baseline line-height-1">
+        <h1 class="text-8xl font-regular">{{ page.title }}</h1>
+        <span>{{ page.subtitle }}</span>
+      </div>
+      <div class="flex gap-4 mt-12">
+        <div class="flex-1" v-if="page.function">
+          <strong class="uppercase text-sm">Função</strong>
+          {{ page.function }}
+        </div>
+        <div class="flex-1" v-if="page.agency">
+          <strong class="uppercase text-sm">Agência</strong> {{ page.agency }}
+        </div>
+        <div class="flex-1" v-if="page.client">
+          <strong class="uppercase text-sm">Cliente</strong> {{ page.client }}
+        </div>
+      </div>
+      <div class="mt-12">
+        <ContentRenderer :value="page" />
+      </div>
+      <div class="mt-12 text-center text-4xl font-main">
+        <NuxtLink v-if="nextCase" :to="nextCase.path">Próximo projeto</NuxtLink>
+        <NuxtLink v-else to="/">Voltar ao início</NuxtLink>
+      </div>
     </article>
   </template>
   <template v-else>
     <div class="empty-page">
       <h1>Page Not Found</h1>
       <p>Oops! The content you're looking for doesn't exist.</p>
-      <NuxtLink to="/">Go back home</NuxtLink>
+      <NuxtLink to="/" @click="gsap.to(window, { duration: 2, scrollTo: 0 })"
+        >Go back home</NuxtLink
+      >
     </div>
   </template>
 </template>
 
 <style lang="scss">
 article {
+  h1 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
   img {
     width: 100%;
     height: auto;
+    margin-block: 6rem;
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
   }
 }
 </style>

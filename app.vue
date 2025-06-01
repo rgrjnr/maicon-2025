@@ -1,14 +1,14 @@
 <template>
   <div id="wrapper">
     <header class="flex justify-between items-center">
-      <h1>Maicon Douglas</h1>
+      <h1><NuxtLink to="/">Maicon Douglas</NuxtLink></h1>
       <nav>
         <ul class="flex gap-4">
           <li>
-            <NuxtLink to="/">Cases</NuxtLink>
+            <NuxtLink to="/#cases">Cases</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about">About me</NuxtLink>
+            <NuxtLink to="/#about">About me</NuxtLink>
           </li>
         </ul>
       </nav>
