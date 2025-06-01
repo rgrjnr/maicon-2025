@@ -172,8 +172,8 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  padding: 3rem;
-  padding-inline: calc(1 * var(--outer-padding));
+  padding: 3rem 0;
+  margin-inline: calc(1 * var(--outer-padding));
   color: white;
   z-index: 100;
   mix-blend-mode: difference;

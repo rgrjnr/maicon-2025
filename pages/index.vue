@@ -145,22 +145,16 @@ onMounted(() => {
   document.body.style.setProperty("--color", "black");
   document.body.style.setProperty("--background-color", "white");
 
-  gsap.fromTo(
-    "header",
-    {
-      paddingInline: "calc(1 * var(--outer-padding))",
+  gsap.to("header", {
+    scrollTrigger: {
+      trigger: "#site",
+      start: "top top",
+      end: "6rem top",
+      scrub: 1,
     },
-    {
-      scrollTrigger: {
-        trigger: "#site",
-        start: "top top",
-        end: "6rem top",
-        scrub: 1,
-      },
-      paddingInline: "calc(1.5 * var(--outer-padding))",
-      ease: "none",
-    }
-  );
+    paddingInline: "calc(0.5 * var(--outer-padding))",
+    ease: "none",
+  });
 
   gsap.to("#hero", {
     scrollTrigger: {
