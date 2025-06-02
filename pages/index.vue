@@ -3,23 +3,23 @@
     <section id="hero" class="bg-black flex items-center justify-center">
       <div class="hero-content">
         <p class="uppercase text-sm animate-text">
-          Tinha tudo pra ser um cowboy, mas virei
+          Tinha tudo pra ser um cowboy, mas&nbsp;virei
         </p>
         <p class="hero-title mt-2 animate-text text-transparent">
           Diretor de arte
         </p>
         <div>
           <div class="hero-image-wrapper">
-            <img data-speed="1.2" src="/images/01.jpg" class="hero-image" />
+            <img data-speed="1.2" src="/images/01.png" class="hero-image" />
           </div>
           <div class="hero-image-wrapper">
-            <img data-speed="1.4" src="/images/03.jpg" class="hero-image" />
+            <img data-speed="1.4" src="/images/03.png" class="hero-image" />
           </div>
           <div class="hero-image-wrapper">
-            <img data-speed="1.6" src="/images/02.jpg" class="hero-image" />
+            <img data-speed="1.6" src="/images/02.png" class="hero-image" />
           </div>
           <div class="hero-image-wrapper">
-            <img data-speed="1.8" src="/images/04.jpg" class="hero-image" />
+            <img data-speed="1.8" src="/images/04.png" class="hero-image" />
           </div>
         </div>
       </div>
@@ -32,6 +32,7 @@
           <div class="case-item">
             <div class="case-title" v-gsap.whenVisible.entrance.slide-right="1">
               {{ item.title }}
+              <div class="text-sm">{{ item.subtitle }}</div>
             </div>
             <div class="case-tags">
               {{ item.function }}
@@ -42,8 +43,14 @@
     </section>
 
     <!-- About me -->
-    <section class="bg-black text-white p-24 z-10 relative" id="about">
-      <div style="max-width: 40rem; margin: auto">
+    <section
+      class="bg-black text-white p-24 z-10 relative flex flex-col md:flex-row gap-24"
+      id="about"
+    >
+      <div class="">
+        <img src="/images/05.png" style="max-width: 20rem; width: 100%" />
+      </div>
+      <div style="max-width: 40rem; margin: auto; flex: 1">
         <div class="flex flex-col gap-4">
           <h2 class="text-3xl" v-gsap.whenVisible.entrance.slide-right="1">
             Sobre mim
@@ -52,16 +59,13 @@
             Nasci em 1996 e cresci numa fazenda no interior do Mato Grosso do
             Sul, onde o quintal era visitado por antas, javalis e até onça. A
             diversão era andar de carroça com meu avô ou mergulhar em rios e
-            lagoas sempre que podia.
-          </p>
-          <p class="animate-lines">
-            Foi assistindo à MTV, ainda na roça, que me apaixonei pela estética
-            das coisas. Achei que seria estilista, e com 22 anos me mudei para
-            São Paulo com esse sonho. Mas os preços dos cursos e dos aluguéis me
-            levaram por outros caminhos. Trabalhei com moda, numa boutique
-            chique, e até preparava figurino para apresentadoras de telejornal.
-            Foi criando posts para essa boutique que descobri o design gráfico —
-            e percebi que ali era o meu lugar.
+            lagoas sempre que podia. Foi assistindo à MTV, ainda na roça, que me
+            apaixonei pela estética das coisas. Achei que seria estilista, e com
+            22 anos me mudei para São Paulo com esse sonho. Mas os preços dos
+            cursos e dos aluguéis me levaram por outros caminhos. Trabalhei com
+            moda, numa boutique, e até preparava figurino para apresentadoras de
+            telejornal. Foi criando posts para essa boutique que descobri o
+            design gráfico — e percebi que ali era o meu lugar.
           </p>
           <p class="animate-lines">
             Formado pela UNIP, mergulhei no universo visual e encontrei no
@@ -70,16 +74,10 @@
             cachorro salsicha como garoto-propaganda.
           </p>
           <p class="animate-lines">
-            Sou um pouco metódico, muitas vezes não entendo sarcasmo e deixo
-            sempre o volume da TV em números redondos. Sou facilmente atraido
-            por filmes de drama, distopias ou terror psicológico, mas também
-            adoro comédias românticas como De Repente 30 e O Diabo Veste Prada.
-          </p>
-          <p class="animate-lines">
-            Hoje moro em Lisboa, sou pai da Dinoco e da Mel, e quero voltar ao
-            mercado como diretor de arte, pronto para novos desafios. E, quem
-            sabe um dia, criar o conceito visual de um álbum pop ou produzir
-            interludes de um show que deixem os fãs de queixo caído.
+            Hoje moro em Lisboa, sou pai do Dinoco e da Mel, e depois de quase 3
+            anos fazendo alguns freelas e sendo braço direito do meu marido em
+            sua aplicação, quero voltar ao mercado como diretor de arte e estou
+            pronto para novos desafios.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 flex-1 mt-8">

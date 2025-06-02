@@ -16,6 +16,12 @@
   font-display: swap;
 }
 
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Azeret Mono", monospace;
   line-height: 1.6;

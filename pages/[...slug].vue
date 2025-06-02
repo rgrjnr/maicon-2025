@@ -83,8 +83,21 @@ article {
   }
   p {
     font-size: 1.25rem;
-    line-height: 1.5;
+    line-height: 1.75;
     margin-bottom: 3rem;
   }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
