@@ -135,6 +135,8 @@
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
+useHead({ title: "Diretor de Arte" });
+
 const { data: cases } = await useAsyncData("cases", () =>
   queryCollection("cases").all()
 );

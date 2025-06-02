@@ -21,6 +21,7 @@ const nextCase = computed(() => {
 
 onMounted(() => {
   if (page.value) {
+    useHead({ title: page.value.title });
     console.log("page", page.value);
     document.body.style.setProperty("--color", page.value?.color as string);
     document.body.style.setProperty(
