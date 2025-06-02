@@ -5,6 +5,7 @@ export default defineContentConfig({
     cases: defineCollection({
       source: "cases/*.md",
       type: "page",
+
       // Define custom schema for docs collection
       schema: z.object({
         agency: z.string(),

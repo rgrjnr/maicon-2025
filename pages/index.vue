@@ -48,7 +48,7 @@
       id="about"
     >
       <div class="">
-        <img src="/images/05.png" style="max-width: 20rem; width: 100%" />
+        <img src="/images/05.png" style="max-width: 16rem; width: 100%" />
       </div>
       <div style="max-width: 40rem; margin: auto; flex: 1">
         <div class="flex flex-col gap-4">
@@ -144,17 +144,6 @@ const { data: cases } = await useAsyncData("cases", () =>
 onMounted(() => {
   document.body.style.setProperty("--color", "black");
   document.body.style.setProperty("--background-color", "white");
-
-  gsap.to("header", {
-    scrollTrigger: {
-      trigger: "#site",
-      start: "top top",
-      end: "6rem top",
-      scrub: 1,
-    },
-    paddingInline: "calc(0.5 * var(--outer-padding))",
-    ease: "none",
-  });
 
   gsap.to("#hero", {
     scrollTrigger: {
